@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function Card(props){
     const CardWrapper = styled.div`
         position: relative;
-        margin: 0 auto;
+        margin: 20px auto;
         width: 100%;
         &:hover MetaWrapper{
             transform: scale(1);
@@ -50,7 +50,7 @@ function Card(props){
         float: right;
     `
     const MetaRole = styled.p`
-        width: 40%
+        width: 50%
     `
     const MetaToolsWrapper = styled.div`
         padding: 10px 0;
@@ -70,7 +70,7 @@ function Card(props){
         width: auto;
     `
     const Button = styled.a`
-        cursor: pointer;
+        cursor: ${props => props.private ? "default" : "pointer"};
         padding: 6px;
         text-decoration: none;
         background: #feb062;
@@ -78,9 +78,16 @@ function Card(props){
         margin-right: 8px;
         font-size: .9em;
         color: #3f3b3b;
-    `
 
+        opacity: ${props => props.private ? "0.4" : "1"};
+    `
     const Tools = props.tools
+
+    let p = "" //Usado no botão de código pra dizer privado ou não
+
+    if(!props.source){
+        p = "Privado"
+    }
 
     return(
         <CardWrapper>
@@ -97,7 +104,7 @@ function Card(props){
                     </MetaToolsWrapper>
                     <MetaButtonsWrapper>
                         <Button target="_blank" href={props.demo}><FontAwesomeIcon icon={faEye}/> Demo</Button>
-                        <Button target="_blank" href={props.source}><FontAwesomeIcon icon={faCode}/> Código</Button>
+                        <Button private={p} target="_blank" href={props.source}><FontAwesomeIcon icon={faCode}/> Código {p}</Button>
                     </MetaButtonsWrapper>
                 </Meta>
             </MetaWrapper>
