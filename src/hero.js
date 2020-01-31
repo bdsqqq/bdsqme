@@ -21,9 +21,20 @@ function Hero(){
         muda();
     }, delay);
 
+    const breakpoints = [48, 64]
+
+    const mq = breakpoints.map(
+        bp => `@media (min-width: ${bp}em)`
+    )
 
     const Wrapper = styled.div`
         margin: 4em 2em;
+
+        ${mq[0]}{
+            margin: 6em 4em;
+
+            max-width: 60%;
+        }
     `
     const Title = styled.span`
         color: #f3f3f3;
@@ -32,6 +43,12 @@ function Hero(){
         letter-spacing: 1px;
         font-weight: 700;
         font-family: 'Montserrat';
+
+        ${mq[0]}{
+            font-size: 4em;
+            line-height: 1.2em;
+            letter-spacing: 2px; 
+        }
     `
     const Highlight = styled.span`
         color: #feb062;
@@ -46,6 +63,14 @@ function Hero(){
         font-weight: 300;
         font-family: 'Montserrat';
         color: #f3f3f3;
+
+        ${mq[0]}{
+            font-size: 1.4em;
+            line-height: 1.2em;
+            letter-spacing: 2px;
+
+            max-width: 80%;
+        }
     `
     const TextHighlight = styled.span`
         font-weight: 400;
@@ -67,6 +92,10 @@ function Hero(){
         transition-property: background, color, border-color;
         transition-duration: 0.2s;
         transition-timing-function: ease-in-out;
+
+        ${mq[0]}{
+            width: 60%;
+        }
     `
     return(
         <Wrapper>
