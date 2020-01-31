@@ -4,12 +4,22 @@ import styled from 'styled-components'
 import Card from './folioCard'
 
 function Folio(){
+    const breakpoints = [48, 64]
+
+    const mq = breakpoints.map(
+        bp => `@media (min-width: ${bp}em)`
+    )
+
     const Wrapper = styled.div`
         margin: -15px 2em;
     `
     const Title = styled.span`
         font-size: 3em;
         color: #f3f3f3;
+
+        ${mq[0]}{
+            font-size: 4em;
+        }
     `
     const CardContainer = styled.div`
         width: 100%;
@@ -18,6 +28,20 @@ function Folio(){
         border-radius: 10px 10px 0 0;
         margin: 0 auto;
         padding: 1em;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        grid-template-columns: repeat(auto-fit, minmax(24rem, 24rem));
+
+        @supports (display: grid) {
+            display: grid;
+            grid-gap: 2rem;
+
+            ${mq[0]}{
+                grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+            }
+        }
     `
 
     return(
