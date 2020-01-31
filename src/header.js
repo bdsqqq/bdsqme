@@ -5,6 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Header() {
 
+    const breakpoints = [48, 64]
+
+    const mq = breakpoints.map(
+        bp => `@media (min-width: ${bp}em)`
+    )
+
     const Wrapper = styled.ul`
         list-style-type: none;
         text-decoration: none;
@@ -13,6 +19,10 @@ function Header() {
         height: 10vh;
         font-size: 1.3em;
         text-transform: uppercase;
+
+        ${mq[0]}{
+            font-size: 2em;
+        }
     `
     const Logo = styled.li`
         display: inline;
