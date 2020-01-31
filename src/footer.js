@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Footer(){
 
@@ -14,7 +16,7 @@ function Footer(){
 
     return(
         <FooterWrapper>
-                <span>Igor Bedesqui - Desenvolvedor Web | igorbedesqui@gmail.com | 11 96132-1158</span>
+                <span>Feito com <FontAwesomeIcon icon={faHeart}/> por Igor Bedesqui | igorbedesqui@gmail.com | 11 96132-1158</span>
         </FooterWrapper>
     );
 }
