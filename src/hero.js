@@ -55,6 +55,7 @@ function Hero(){
         text-decoration: underline wavy #feb062;
         font-weight: 700;
         letter-spacing: 4px;
+        text-transform: uppercase;
     `
     const Text = styled.p`
         margin: 3em 0 1.5em;
@@ -100,7 +101,7 @@ function Hero(){
     return(
         <Wrapper>
             <Title>Desenvolvedor Web Fullstack pronto para criar algo <Highlight>{adjList[i]}</Highlight></Title>
-            <Text>Criação de Sites e Serviços de alta qualidade com design inovador, diferenciando-o dos concorrentes, trazendo mais credibilidade para sua marca e gerando resultados para seu projeto. <TextHighlight>Você está preparado para isso?</TextHighlight></Text>
+            <Text>Criação de Sites e Serviços com foco na <TextHighlight>qualidade</TextHighlight>, diferenciando-o dos concorrentes, trazendo mais credibilidade para sua marca e gerando resultados para seu projeto. <TextHighlight>Você está preparado para isso?</TextHighlight></Text>
             <Button>Sim, Estou preparado</Button>
         </Wrapper>
     );

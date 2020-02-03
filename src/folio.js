@@ -87,7 +87,7 @@ function Folio(){
                     {id:3,name:"Chopping "}
                 ]}
                 demo={"https://igorbedesqui.com"}
-                img={"https://images.unsplash.com/photo-1580372647468-09cd642ec3b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"}
+                img={"https://images.unsplash.com/photo-1498579485796-98be3abc076e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"}
             />
         </CardContainer>
         </>
