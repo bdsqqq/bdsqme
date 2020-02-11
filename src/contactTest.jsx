@@ -30,31 +30,33 @@ export default function App() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <h2>Me fala um pouco sobre sua idéia, podemos torna-la realidade juntos!</h2>
-      <label>Nome</label>
-      <input id="inputNome" name="nome" ref={register({ required: "Digite seu nome" })} />
-      
+    <div id="modal">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <h2 className="formTitle">Me fala um pouco sobre sua idéia, podemos torna-la realidade juntos!</h2>
+        <label>Nome</label>
+        <input id="inputNome" name="nome" ref={register({ required: "Digite seu nome" })} />
+        
 
-      <label>Email</label>
-      <input
-        id="inputEmail"
-        name="email"
-        ref={register({
-          required: "Digite um email válido.",
-          pattern: /^\S+@\S+$/i
-        })}
-      />
-      
+        <label>Email</label>
+        <input
+          id="inputEmail"
+          name="email"
+          ref={register({
+            required: "Digite um email válido.",
+            pattern: /^\S+@\S+$/i
+          })}
+        />
+        
 
-      <label>Mensagem</label>
-      <textarea
-        id="inputMensagem"
-        name="mensagem"
-        ref={register({ required: true, maxLength: 5000 })}
-      />
-      
-      <input type="submit" value="Enviar"/>
-    </form>
+        <label>Mensagem</label>
+        <textarea
+          id="inputMensagem"
+          name="mensagem"
+          ref={register({ required: true, maxLength: 5000 })}
+        />
+        
+        <input type="submit" value="Enviar"/>
+      </form>
+    </div>
   );
 }
