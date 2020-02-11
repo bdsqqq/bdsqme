@@ -38,7 +38,7 @@ input, textarea {
     sans-serif;
   transition: all .3s;
   border-bottom: 2px solid #bebed2;
-  color: #000;
+  color: #f3f3f3;
 }
 
 input:focus, textarea:focus {
@@ -51,6 +51,10 @@ input:focus, textarea:focus {
   animation-duration: 0.2s;
   animation-iteration-count: 2;
   animation-timing-function: ease-in-out;
+}
+
+.input__error:focus{
+  border-bottom: 2px solid #802038;
 }
 
 .input__error:nth-of-type(2){
@@ -100,7 +104,7 @@ input[type="submit"]:hover {
 button[type="submit"]:active,
 input[type="button"]:active,
 input[type="submit"]:active {
-  transition: 0.3s all;
+  transition: 0.2s all;
   transform: translateY(3px);
   border: 1px solid transparent;
   opacity: 0.8;

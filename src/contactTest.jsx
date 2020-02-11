@@ -34,9 +34,7 @@ export default function App() {
       <h2>Me fala um pouco sobre sua idéia, podemos torna-la realidade juntos!</h2>
       <label>Nome</label>
       <input id="inputNome" name="nome" ref={register({ required: "Digite seu nome" })} />
-      <ErrorMessage errors={errors} name="nome">
-        {({ message }) => <p>{message}</p>}
-      </ErrorMessage>
+      
 
       <label>Email</label>
       <input
@@ -47,9 +45,7 @@ export default function App() {
           pattern: /^\S+@\S+$/i
         })}
       />
-      <ErrorMessage errors={errors} name="email">
-        {() => <p>Digite um email válido.</p>}
-      </ErrorMessage>
+      
 
       <label>Mensagem</label>
       <textarea
@@ -57,9 +53,7 @@ export default function App() {
         name="mensagem"
         ref={register({ required: true, maxLength: 5000 })}
       />
-      <ErrorMessage errors={errors} name="mensagem">
-        {() => <p>Digite uma mensagem.</p>}
-      </ErrorMessage>
+      
       <input type="submit" value="Enviar"/>
     </form>
   );
