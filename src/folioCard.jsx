@@ -35,7 +35,7 @@ function Card(props){
     const CardWrapper = styled.div`
         position: relative;
         margin: 20px auto;
-        width: 100%;
+        width: 95%;
 
         ${mq[1]}{
             &:hover {
@@ -102,7 +102,7 @@ function Card(props){
         cursor: ${props => props.private ? "default" : "pointer"};
         padding: 6px;
         text-decoration: none;
-        background: #feb062;
+        background: #f3f3f3;
         border-radius: 5px;
         margin-right: 8px;
         font-size: .9em;

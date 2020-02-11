@@ -11,7 +11,7 @@ function Folio(){
     )
 
     const Wrapper = styled.div`
-        margin: -15px 2em;
+        margin: -15px 2rem;
     `
     const Title = styled.span`
         font-size: 3em;
@@ -32,7 +32,7 @@ function Folio(){
         display: flex;
         flex-wrap: wrap;
 
-        grid-template-columns: repeat(auto-fit, minmax(24rem, 24rem));
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 24rem));
 
         @supports (display: grid) {
             display: grid;
