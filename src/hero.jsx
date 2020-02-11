@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef  } from 'react'
 import styled from 'styled-components'
+import Modal from './modal'
+import useModal from './useModal'
 
 function Hero(){
     const [i, setI] = useState(0);
@@ -21,6 +23,8 @@ function Hero(){
         muda();
     }, delay);
 
+    const {isShowing, toggle} = useModal();
+
     const breakpoints = [48, 64]
 
     const mq = breakpoints.map(
@@ -33,7 +37,7 @@ function Hero(){
         ${mq[0]}{
             margin: 6em 4em;
 
-            max-width: 60%;
+            max-width: 55%;
         }
     `
     const Title = styled.span`
@@ -78,6 +82,8 @@ function Hero(){
         color: #fff;
     `
     const Button = styled.a`
+        cursor: pointer;
+
         background: #feb062;
         width: 100%;
         display: inline-block;
@@ -99,11 +105,18 @@ function Hero(){
         }
     `
     return(
-        <Wrapper>
-            <Title>Desenvolvedor Web Fullstack pronto para criar algo <Highlight>{adjList[i]}</Highlight></Title>
-            <Text>Criação de Sites e Serviços com foco na <TextHighlight>qualidade</TextHighlight>, diferenciando-o dos concorrentes, trazendo mais credibilidade para sua marca e gerando resultados para seu projeto. <TextHighlight>Você está preparado para isso?</TextHighlight></Text>
-            <Button>Sim, Estou preparado</Button>
-        </Wrapper>
+        <>
+            <Wrapper>
+                <Title>Desenvolvedor Web Fullstack pronto para criar algo <Highlight>{adjList[i]}</Highlight></Title>
+                <Text>Criação de Sites e Serviços com foco na <TextHighlight>qualidade</TextHighlight>, diferenciando-o dos concorrentes, trazendo mais credibilidade para sua marca e gerando resultados para seu projeto. <TextHighlight>Você está preparado para isso?</TextHighlight></Text>
+                <Button onClick={toggle}>Sim, Estou preparado</Button>
+            </Wrapper>
+
+            <Modal
+                isShowing={isShowing}
+                hide={toggle}
+            />
+        </>
     );
 }
 
