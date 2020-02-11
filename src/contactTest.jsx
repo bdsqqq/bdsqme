@@ -1,30 +1,66 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { useForm } from "react-hook-form";
+import { useForm, ErrorMessage } from "react-hook-form";
 
 import "./styles.css";
 
-function Contact() {
-  const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => {
-    console.log(data);
-  }; // your form submit function which will invoke after successful validation
+export default function App() {
+  const { register, handleSubmit, errors, formState } = useForm({
+    mode: "onChange"
+  });
+  const onSubmit = data => console.log(data);
+  console.log("ERROS",errors);
+  const inputs = {
+    "nome" : document.getElementById("inputNome"), 
+    "email" : document.getElementById("inputEmail"), 
+    "mensagem" : document.getElementById("inputMensagem")
+  }
 
-  console.log(watch("example")); // you can watch individual input by pass the name of the input
+  const pintarInput = (errorsdot, inputsdot) => {
+    if(errorsdot){
+      inputsdot.classList.add("input__error");
+    }else{
+      inputsdot.className = "";
+    }
+  }
+ 
+  if(formState.submitCount > 0){
+    pintarInput(errors.nome, inputs.nome);
+    pintarInput(errors.email, inputs.email);
+    pintarInput(errors.mensagem, inputs.mensagem);
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label>Example</label>
-      <input name="example" defaultValue="test" ref={register} />
-      <label>ExampleRequired</label>
+      <h2>Me fala um pouco sobre sua idéia, podemos torna-la realidade juntos!</h2>
+      <label>Nome</label>
+      <input id="inputNome" name="nome" ref={register({ required: "Digite seu nome" })} />
+      <ErrorMessage errors={errors} name="nome">
+        {({ message }) => <p>{message}</p>}
+      </ErrorMessage>
+
+      <label>Email</label>
       <input
-        name="exampleRequired"
-        ref={register({ required: true, maxLength: 10 })}
+        id="inputEmail"
+        name="email"
+        ref={register({
+          required: "Digite um email válido.",
+          pattern: /^\S+@\S+$/i
+        })}
       />
-      {errors.exampleRequired && <p>This field is required</p>}
-      <input type="submit" />
+      <ErrorMessage errors={errors} name="email">
+        {() => <p>Digite um email válido.</p>}
+      </ErrorMessage>
+
+      <label>Mensagem</label>
+      <textarea
+        id="inputMensagem"
+        name="mensagem"
+        ref={register({ required: true, maxLength: 5000 })}
+      />
+      <ErrorMessage errors={errors} name="mensagem">
+        {() => <p>Digite uma mensagem.</p>}
+      </ErrorMessage>
+      <input type="submit" value="Enviar"/>
     </form>
   );
 }
-
-export default Contact
