@@ -5,7 +5,7 @@ import useModal from './useModal'
 
 function Hero(){
     const [i, setI] = useState(0);
-    const [delay, setDelay] = useState(3000);
+    const [delay] = useState(3000);
 
     const adjList = ["Incrível.", "Único.", "Novo.", "Original."];
     const zeroTo = (input, maxValue ) => {
