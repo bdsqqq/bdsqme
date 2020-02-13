@@ -8,7 +8,6 @@ function Hero(){
     const [delay, setDelay] = useState(3000);
 
     const adjList = ["Incrível.", "Único.", "Novo.", "Original."];
-    const adjLength = adjList.length
     const zeroTo = (input, maxValue ) => {
         if(input < maxValue){
             return input+1;
@@ -17,10 +16,10 @@ function Hero(){
         }
     }
 
-    const muda = () => setI(zeroTo(i, adjLength-1));
+    const change = () => setI(zeroTo(i, adjList.length-1));
 
     useInterval(() => {
-        muda();
+        change();
     }, delay);
 
     const {isShowing, toggle} = useModal();
