@@ -1,27 +1,60 @@
-import React, { useState, useEffect, useRef  } from 'react'
+import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 import "./styles.css";
+import useInterval from './useInterval'
+
 const axios = require('axios');
 
 
 export default function App() {
+  const [i, setI] = useState(0);
+  const [delay, setDelay] = useState(1000);
   const [buttonSendStatus, setButtonSendStatus] = useState("Enviar");
+  const [formStatus, setFormStatus] = useState("idle");
+  const [buttonSendClass, setButtonSendClass] = useState("")
 
   const { register, handleSubmit, errors, formState } = useForm({
     mode: "onChange"
   });
+
+  const zeroTo = (input, maxValue ) => {
+    if(input < maxValue){
+        return input+1;
+    }else{
+        return 0;
+    }
+  }
+
+  const dotList = ["enviando.", "enviando..", "enviando..." ];
+
+  const change = () => setI(zeroTo(i, dotList.length-1));
+
+  useInterval(() => {
+    if(formStatus === "sending"){
+      change();
+      setButtonSendStatus(dotList[i]);
+    }
+    console.log(i)
+  }, delay);
+
   const onSubmit = data => {
-    setButtonSendStatus("Enviando.");
+    setFormStatus("sending");
+    setButtonSendClass("")
     inputs.submit.disabled = true;
     console.log(data);
     axios.post('https://api.igorbedesqui.com/send/mail', data)
     .then(function (response) {
+      setDelay(null);
+      setButtonSendClass("button__success")
+      setFormStatus("success");
       setButtonSendStatus("Enviado!");
       console.log(response);
     })
     .catch(function (error) {
-      inputs.submit.disabled = false;
+      setFormStatus("error");
+      setButtonSendClass("button__error")
       setButtonSendStatus("Tente novamente");
+      inputs.submit.disabled = false;
       console.log(error);
     });
   };
@@ -78,7 +111,7 @@ export default function App() {
           ref={register({ required: true, maxLength: 5000 })}
         />
         
-        <input type="submit" value={buttonSendStatus} id="inputSubmit"/>
+        <input type="submit" value={buttonSendStatus} className={buttonSendClass} id="inputSubmit"/>
       </form>
     </div>
   );
