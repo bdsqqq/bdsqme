@@ -97,9 +97,22 @@ function Hero(){
         font-weight: 400;
         font-family: 'Montserrat';
 
-        transition-property: background, color, border-color;
+        transition-property: background, color, border, opacity;
         transition-duration: 0.2s;
         transition-timing-function: ease-in-out;
+
+        -webkit-appearance: none;
+        
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:active {
+        transition: 0.2s all;
+        transform: translateY(3px);
+        border: 1px solid transparent;
+        opacity: 0.8;
+        }
 
         ${mq[0]}{
             width: 60%;
