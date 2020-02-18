@@ -22,6 +22,18 @@ input:focus, textarea:focus {
   border-bottom: 2px solid #78788c;
 }
 
+.input__success{
+  border-bottom: 2px solid #38bf16;
+  animation-name: vWobbler;
+  animation-duration: 0.2s;
+  animation-iteration-count: 2;
+  animation-timing-function: ease-in-out;
+}
+
+.input__success:focus{
+  border-bottom: 2px solid #288020;
+}
+
 .input__error{
   border-bottom: 2px solid #bf1650;
   animation-name: hWobbler;
@@ -84,6 +96,14 @@ input[type="submit"]:active {
   transform: translateY(3px);
   border: 1px solid transparent;
   opacity: 0.8;
+}
+
+button[type="submit"]:disabled,
+input[type="submit"]:disabled {
+  transition: 0.2s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.4;
 }
 
 button[type="submit"],

@@ -1,34 +1,55 @@
-import React from "react";
+import React, { useState, useEffect, useRef  } from 'react'
 import { useForm } from "react-hook-form";
+import "./styles.css";
 const axios = require('axios');
 
 
-import "./styles.css";
-
 export default function App() {
+  const [buttonSendStatus, setButtonSendStatus] = useState("Enviar");
+
   const { register, handleSubmit, errors, formState } = useForm({
     mode: "onChange"
   });
-  const onSubmit = data => console.log(data);
-  console.log("ERROS",errors);
+  const onSubmit = data => {
+    setButtonSendStatus("Enviando.");
+    inputs.submit.disabled = true;
+    console.log(data);
+    axios.post('https://api.igorbedesqui.com/send/mail', data)
+    .then(function (response) {
+      setButtonSendStatus("Enviado!");
+      console.log(response);
+    })
+    .catch(function (error) {
+      inputs.submit.disabled = false;
+      setButtonSendStatus("Tente novamente");
+      console.log(error);
+    });
+  };
+  
   const inputs = {
-    "nome" : document.getElementById("inputNome"), 
+    "nome" : document.getElementById("inputName"), 
     "email" : document.getElementById("inputEmail"), 
-    "mensagem" : document.getElementById("inputMensagem")
+    "mensagem" : document.getElementById("inputMessage"),
+    "submit" : document.getElementById("inputSubmit")
   }
 
-  const pintarInput = (errorsdot, inputsdot) => {
-    if(errorsdot){
-      inputsdot.classList.add("input__error");
+  const pintarInput = (condition, inputsdot, classToAddError, classToAddSuccess ) => {
+    if(condition && classToAddError){
+      inputsdot.classList.add(classToAddError);
     }else{
-      inputsdot.className = "";
+      if(classToAddSuccess){
+        inputsdot.classList.remove(classToAddError);
+        inputsdot.classList.add(classToAddSuccess);
+      }else{
+        inputsdot.className = "";
+      }
     }
   }
  
   if(formState.submitCount > 0){
-    pintarInput(errors.nome, inputs.nome);
-    pintarInput(errors.email, inputs.email);
-    pintarInput(errors.mensagem, inputs.mensagem);
+    pintarInput(errors.inputName, inputs.nome, "input__error", "input__success");
+    pintarInput(errors.inputEmail, inputs.email, "input__error", "input__success");
+    pintarInput(errors.inputMessage, inputs.mensagem, "input__error", "input__success");
   }
 
   return (
@@ -36,13 +57,13 @@ export default function App() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2 className="formTitle">Me fala um pouco sobre sua idéia, podemos torna-la realidade juntos!</h2>
         <label>Nome</label>
-        <input id="inputNome" name="nome" ref={register({ required: "Digite seu nome" })} />
+        <input id="inputName" name="inputName" ref={register({ required: "Digite seu nome" })} />
         
 
         <label>Email</label>
         <input
           id="inputEmail"
-          name="email"
+          name="inputEmail"
           ref={register({
             required: "Digite um email válido.",
             pattern: /^\S+@\S+$/i
@@ -52,12 +73,12 @@ export default function App() {
 
         <label>Mensagem</label>
         <textarea
-          id="inputMensagem"
-          name="mensagem"
+          id="inputMessage"
+          name="inputMessage"
           ref={register({ required: true, maxLength: 5000 })}
         />
         
-        <input type="submit" value="Enviar"/>
+        <input type="submit" value={buttonSendStatus} id="inputSubmit"/>
       </form>
     </div>
   );
