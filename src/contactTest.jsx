@@ -88,7 +88,7 @@ export default function App() {
   return (
     <div id="modal">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h2 className="formTitle">Me fala um pouco sobre sua idéia, podemos torna-la realidade juntos!</h2>
+        <h2 className="formTitle">Me fala um pouco sobre sua ideia, podemos torná-la realidade juntos!</h2>
         <label>Nome</label>
         <input id="inputName" name="inputName" ref={register({ required: "Digite seu nome" })} />
         
