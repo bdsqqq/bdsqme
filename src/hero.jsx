@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useRef  } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Modal from './modal'
 import useModal from './useModal'
+import useInterval from './useInterval'
+
 
 function Hero(){
     const [i, setI] = useState(0);
@@ -117,26 +119,6 @@ function Hero(){
             />
         </>
     );
-}
-
-function useInterval(callback, delay) {
-    const savedCallback = useRef();
-  
-    // Remember the latest function.
-    useEffect(() => {
-      savedCallback.current = callback;
-    }, [callback]);
-  
-    // Set up the interval.
-    useEffect(() => {
-      function tick() {
-        savedCallback.current();
-      }
-      if (delay !== null) {
-        let id = setInterval(tick, delay);
-        return () => clearInterval(id);
-      }
-    }, [delay]);
 }
 
 export default Hero
