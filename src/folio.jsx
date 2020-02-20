@@ -53,40 +53,41 @@ function Folio(){
         </Wrapper>
         <CardContainer>
             <Card 
-                projeto={"Projeto Pessoal"} 
-                ano={"2019"} 
-                role={"Desenvolvedor Web Fullstack"} 
+                projeto={"Nome"} 
+                ano={"Ano"} 
+                role={"Função"} 
                 tools={[
-                    {id:1,name:"NODE.JS "},
-                    {id:2,name:"EXPRESS.JS "},
-                    {id:3,name:"NGINX"}
+                    {id:1,name:"Ferramenta "},
+                    {id:2,name:"Ferramenta "},
+                    {id:3,name:"Ferramenta "}
                 ]}
-                demo={"https://igorbedesqui.com"}
+                demo={""}
                 source={"https://github.com/bdsqqq/bdsqme"}
                 img={"https://images.unsplash.com/flagged/photo-1580313766096-b388176239b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"}
             />
             <Card 
-                projeto={"Harley Davidson"} 
-                ano={"1998"} 
-                role={"Manutenção de Motocicletas"} 
+                projeto={"Nome"} 
+                ano={"Ano"} 
+                role={"Função"} 
                 tools={[
-                    {id:1,name:"Zen "},
-                    {id:2,name:"Quality "},
+                    {id:1,name:"Ferramenta "},
+                    {id:2,name:"Ferramenta "},
+                    {id:3,name:"Ferramenta "}
                 ]}
-                demo={"https://igorbedesqui.com"}
+                demo={""}
                 source={"https://github.com/bdsqqq/bdsqme"}
                 img={"https://images.unsplash.com/photo-1558980394-dbb977039a2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"}
             />
             <Card 
-                projeto={"Hamborgah"} 
-                ano={"2020"} 
-                role={"MasterChef fodão"} 
+                projeto={"Nome"} 
+                ano={"Ano"} 
+                role={"Função"} 
                 tools={[
-                    {id:1,name:"Cutting "},
-                    {id:2,name:"Slicing "},
-                    {id:3,name:"Chopping "}
+                    {id:1,name:"Ferramenta "},
+                    {id:2,name:"Ferramenta "},
+                    {id:3,name:"Ferramenta "}
                 ]}
-                demo={"https://igorbedesqui.com"}
+                demo={""}
                 img={"https://images.unsplash.com/photo-1498579485796-98be3abc076e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"}
             />
         </CardContainer>
