@@ -53,42 +53,30 @@ function Folio(){
         </Wrapper>
         <CardContainer>
             <Card 
-                projeto={"Nome"} 
-                ano={"Ano"} 
-                role={"Função"} 
+                projeto={"Portfolio em AngularJS"} 
+                ano={"2019"} 
+                role={"Desenvolvedor Web FrontEnd"} 
                 tools={[
-                    {id:1,name:"Ferramenta "},
-                    {id:2,name:"Ferramenta "},
-                    {id:3,name:"Ferramenta "}
+                    {id:1,name:"Angular.js "},
+                    {id:2,name:"TypeScript "}
                 ]}
-                demo={""}
-                source={"https://github.com/bdsqqq/bdsqme"}
-                img={"https://images.unsplash.com/flagged/photo-1580313766096-b388176239b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"}
+                demo={"https://igorbedesqui.com/"}
+                source={"https://github.com/bdsqqq/bdsq.me_angular"}
+                img={"https://i.postimg.cc/63LCHB91/igor-Bedesqui.jpg"}
             />
             <Card 
-                projeto={"Nome"} 
-                ano={"Ano"} 
-                role={"Função"} 
+                projeto={"Odara Fotografia"} 
+                ano={"2017"} 
+                role={"Desenvolvedor Web Fullstack"} 
                 tools={[
-                    {id:1,name:"Ferramenta "},
-                    {id:2,name:"Ferramenta "},
-                    {id:3,name:"Ferramenta "}
+                    {id:1,name:"HTML "},
+                    {id:2,name:"CSS "},
+                    {id:4,name:"JavaScript "},
+                    {id:3,name:"PHP "}
                 ]}
-                demo={""}
-                source={"https://github.com/bdsqqq/bdsqme"}
-                img={"https://images.unsplash.com/photo-1558980394-dbb977039a2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"}
-            />
-            <Card 
-                projeto={"Nome"} 
-                ano={"Ano"} 
-                role={"Função"} 
-                tools={[
-                    {id:1,name:"Ferramenta "},
-                    {id:2,name:"Ferramenta "},
-                    {id:3,name:"Ferramenta "}
-                ]}
-                demo={""}
-                img={"https://images.unsplash.com/photo-1498579485796-98be3abc076e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"}
+                demo={"http://odarafotografia.com/"}
+                source={""}
+                img={"https://i.postimg.cc/B6GxcjGK/Odara.jpg"}
             />
         </CardContainer>
         </>
