@@ -18,17 +18,26 @@ function Card(props){
         bottom: -15px;
         width: 95%;
         max-height: 105%;
-        overflow: scroll;
-
-        ${mq[0]}{
-            overflow: hidden;
-        }
+        overflow: auto;
 
         ${mq[1]}{
             transform: scale(0);
             transform-origin: 50% 50%;
             transition: all 100ms ease-out;
             visibility: hidden;
+        }
+
+        &::-webkit-scrollbar{
+            width: 0.25rem;
+            height: 0.25rem;
+        }
+
+        &::-webkit-scrollbar-track{
+            background: #000000;
+        }
+
+        &::-webkit-scrollbar-thumb{
+            background: #f3f3f3;
         }
     `
 
@@ -84,7 +93,7 @@ function Card(props){
     const Tool = styled.span`
         padding: 5px;
         background: #575151;
-        border-radius:3px;
+        border-radius: 1px;
         margin-right: 8px;
         font-size: .8em;
         line-height: 3em;
@@ -99,19 +108,27 @@ function Card(props){
         width: auto;
     `
     const Button = styled.a`
+        pointer-events: ${props => props.private ? "none" : "auto"};
         cursor: ${props => props.private ? "default" : "pointer"};
         padding: 6px;
         text-decoration: none;
-        background: #f3f3f3;
-        border-radius: 5px;
+        background: #f3f3f300;
+        border-radius: 1px;
         margin-right: 8px;
         font-size: .9em;
-        color: #3f3b3b;
+        border: solid 1px #f3f3f3;
+        color: #f3f3f3;
+        transition: ease-in-out 0.3s;
 
         opacity: ${props => props.private ? "0.4" : "1"};
 
         ${mq[1]}{
-            font-size: 1.2em;
+            font-size: 1.1em;
+        }
+
+        &:hover{
+            background: ${props => props.private ? "#f3f3f300" : "#f3f3f3"};
+            color: ${props => props.private ? "#f3f3f3" : "#000000"};
         }
     `
     const Tools = props.tools
