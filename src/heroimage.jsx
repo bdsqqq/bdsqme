@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-//TESTANDO COMMITS
 
 function HeroImage(props){
     const size = props.size;
