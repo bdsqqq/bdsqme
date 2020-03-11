@@ -76,7 +76,7 @@ function Folio(){
                     {id:4,name:"React Hooks "},
                     {id:3,name:"Axios "}
                 ]}
-                demo={"https://iss.bdsq.me/"}
+                demo={"https://igorbedesqui.com/"}
                 source={"https://github.com/bdsqqq/bdsqme"}
                 img={"https://i.postimg.cc/1zhVRtfj/reactigorbedesqui.jpg"}
             />
