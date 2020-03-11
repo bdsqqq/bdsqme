@@ -46,8 +46,8 @@ function Header() {
   return (
     <Wrapper>
         <Logo>Igor Bedesqui</Logo>
-        <NavItem><FontAwesomeIcon icon={faGithub} /></NavItem>
-        <NavItem><FontAwesomeIcon icon={faLinkedinIn} /></NavItem>
+        <NavItem><a target="blank" style={{ textDecoration: 'none', color: '#f3f3f3' }} href="https://github.com/bdsqqq"><FontAwesomeIcon icon={faGithub} /></a></NavItem>
+        <NavItem><a target="blank" style={{ textDecoration: 'none', color: '#f3f3f3' }} href="https://www.linkedin.com/in/igor-bedesqui-88a38a152/"><FontAwesomeIcon icon={faLinkedinIn} /></a></NavItem>
     </Wrapper>
   );
 }
