@@ -42,7 +42,7 @@ export default function App() {
     setButtonSendClass("")
     inputs.submit.disabled = true;
     console.log(data);
-    axios.post('https://api.igorbedesqui.com/send/mail', data)
+    axios.post('https://bdsq-rest-api.herokuapp.com/send/mail', data)
     .then(function (response) {
       setDelay(null);
       setButtonSendClass("button__success")
