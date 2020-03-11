@@ -48,7 +48,7 @@ function Folio(){
         <>
         <Wrapper>
             <Title>
-                Projetos
+                Folio
             </Title>
         </Wrapper>
         <CardContainer>
@@ -65,6 +65,39 @@ function Folio(){
                 demo={"https://iss.bdsq.me/"}
                 source={"https://github.com/bdsqqq/react-wherestheiss"}
                 img={"https://i.postimg.cc/6QVmQ85j/wherestheiss.jpg"}
+            />
+            <Card 
+                projeto={"igorbedesqui.com"} 
+                ano={"2020"} 
+                role={"Desenvolvedor Web Fullstack"} 
+                tools={[
+                    {id:1,name:"React "},
+                    {id:2,name:"Styled Components "},
+                    {id:4,name:"React Hooks "},
+                    {id:3,name:"Axios "}
+                ]}
+                demo={"https://iss.bdsq.me/"}
+                source={"https://github.com/bdsqqq/bdsqme"}
+                img={"https://i.postimg.cc/1zhVRtfj/reactigorbedesqui.jpg"}
+            />
+            <Card 
+                projeto={"bdsq-rest-api"} 
+                ano={"2019-2020"} 
+                role={"Desenvolvedor backend"} 
+                tools={[
+                    {id:1,name:"NODE.js "},
+                    {id:2,name:"Express.js "},
+                    {id:3,name:"Conexão com API de terceiros "},
+                    {id:4,name:"Nginx "},
+                    {id:5,name:"PM2 "},
+                    {id:6,name:"NodeMailer "},
+                    {id:7,name:"dotEnv "},
+                    {id:8,name:"Cors "},
+                    {id:9,name:"nodeFetch "}
+                ]}
+                demo={"https://bdsq-rest-api.herokuapp.com/"}
+                source={"https://github.com/bdsqqq/bdsq-rest-api"}
+                img={"https://i.postimg.cc/5t5BZGfT/bdsq-rest-api.jpg"}
             />
             <Card 
                 projeto={"Portfolio em AngularJS"} 
