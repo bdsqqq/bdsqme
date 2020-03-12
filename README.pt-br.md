@@ -1,5 +1,7 @@
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE) [![Netlify Status](https://api.netlify.com/api/v1/badges/52172911-21ad-498b-af4f-02c5eab562eb/deploy-status)](https://app.netlify.com/sites/friendly-darwin-160617/deploys)
 
+[README.md in english](https://github.com/bdsqqq/bdsqme/blob/master/README.md)
+
 # igorbedesqui.com
 
 Este é o meu site e portfólio pessoal, ele usa React, Styled Components, React Hooks e Axios.
