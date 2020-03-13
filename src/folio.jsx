@@ -102,14 +102,14 @@ function Folio(){
             <Card 
                 projeto={"Portfolio em AngularJS"} 
                 ano={"2019"} 
-                role={"Desenvolvedor Web FrontEnd"} 
+                role={"Desenvolvedor Web Angular"} 
                 tools={[
                     {id:1,name:"Angular.js "},
                     {id:2,name:"TypeScript "},
                     {id:3,name:"Fetch API "},
                 ]}
-                demo={"https://igorbedesqui.com/"}
-                source={"https://github.com/bdsqqq/bdsq.me_angular"}
+                demo={"https://angular.bdsq.me/"}
+                source={""}
                 img={"https://i.postimg.cc/63LCHB91/igor-Bedesqui.jpg"}
             />
             <Card 
