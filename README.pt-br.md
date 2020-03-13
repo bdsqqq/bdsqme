@@ -10,7 +10,7 @@ O site se comunica com uma [REST API](https://github.com/bdsqqq/bdsq-rest-api) p
 
 ## Atribuições
 
-O projeto foi iniciado com [Create React App](https://github.com/facebook/create-react-app). e usa [Styled Components](https://github.com/styled-components), [Axios](https://github.com/axios/axios) e os custom hooks [useInterval](https://github.com/donavon/use-interval) e [react-hook-form](https://github.com/react-hook-form/react-hook-form);
+O projeto foi iniciado com [Create React App](https://github.com/facebook/create-react-app). ele usa [Styled Components](https://github.com/styled-components), [Axios](https://github.com/axios/axios) e os custom hooks [useInterval](https://github.com/donavon/use-interval) e [react-hook-form](https://github.com/react-hook-form/react-hook-form);
 
 Hero Image por [Dean Pugh](https://unsplash.com/@wezlar11?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) no [Unsplash](https://unsplash.com/@bdsqq/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
 
