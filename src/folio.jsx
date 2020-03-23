@@ -53,6 +53,20 @@ function Folio(){
         </Wrapper>
         <CardContainer>
             <Card 
+                projeto={"Live Markdown"} 
+                ano={"2020"} 
+                role={"Desenvolvedor Web Fullstack"} 
+                tools={[
+                    {id:1,name:"React "},
+                    {id:2,name:"Firebase "},
+                    {id:4,name:"Styled Components "},
+                    {id:3,name:"UUID "}
+                ]}
+                demo={"https://markdown.bdsq.me/"}
+                source={"https://github.com/bdsqqq/live-markdown-react-firebase"}
+                img={"https://i.postimg.cc/ZqDB3BSg/markdown.jpg"}
+            />
+            <Card 
                 projeto={"Onde está a iss??"} 
                 ano={"2020"} 
                 role={"Desenvolvedor Web Fullstack"} 
