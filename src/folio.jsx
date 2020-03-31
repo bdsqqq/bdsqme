@@ -53,6 +53,20 @@ function Folio(){
         </Wrapper>
         <CardContainer>
             <Card 
+                projeto={"Covid-19 Tracker"} 
+                ano={"2020"} 
+                role={"Desenvolvedor Web Fullstack"} 
+                tools={[
+                    {id:1,name:"React "},
+                    {id:2,name:"Yarn "},
+                    {id:4,name:"Styled Components "},
+                    {id:3,name:"Fetch API "}
+                ]}
+                demo={"https://covid.bdsq.me/"}
+                source={"https://github.com/bdsqqq/covid19-tracker"}
+                img={"https://i.postimg.cc/PrbpMY6X/covid19-Tracker.jpg"}
+            />
+            <Card 
                 projeto={"Live Markdown"} 
                 ano={"2020"} 
                 role={"Desenvolvedor Web Fullstack"} 
@@ -60,7 +74,8 @@ function Folio(){
                     {id:1,name:"React "},
                     {id:2,name:"Firebase "},
                     {id:4,name:"Styled Components "},
-                    {id:3,name:"UUID "}
+                    {id:3,name:"UUID "},
+                    {id:5,name:"Yarn "}
                 ]}
                 demo={"https://markdown.bdsq.me/"}
                 source={"https://github.com/bdsqqq/live-markdown-react-firebase"}
