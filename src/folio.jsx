@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components'
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import db from './firebase';
 
-import Card from './folioCard'
+import Card from './folioCard';
 
 function Folio(){
     const breakpoints = [48, 64]
@@ -44,6 +45,19 @@ function Folio(){
         }
     `
 
+    const[projects, setProjects] = useState([]) //Cria a variavel de estado que irá armazenar os projetos
+
+    useEffect(() => {
+        db.ref('/projects').on('value', (snapshot) => {
+            let projects = [];
+            snapshot.forEach(childSnapshot => {
+                projects.push({ ...childSnapshot.val(), key: childSnapshot.key})
+            });
+            setProjects({ projects })
+        })
+    });
+
+    console.log(projects, "array")
     return(
         <>
         <Wrapper>
