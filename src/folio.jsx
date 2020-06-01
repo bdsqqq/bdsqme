@@ -45,15 +45,15 @@ function Folio(){
         }
     `
 
-    const[projects, setProjects] = useState([]) //Cria a variavel de estado que irá armazenar os projetos
+    const[projects, setProjects] = useState([]) //creates a state variable called projects and a method to update it
 
     useEffect(() => {
-        db.ref('/projects').on('value', (snapshot) => {
-            let projects = [];
+        db.ref('/projects').on('value', (snapshot) => { //creates a reference to /projects on the firebase db and creates a snapshot on each value change
+            let projects = []; // creates an empty array called projects to store the data from snapshots
             snapshot.forEach(childSnapshot => {
-                projects.push({ ...childSnapshot.val(), key: childSnapshot.key})
+                projects.push({ ...childSnapshot.val(), key: childSnapshot.key}) //adds each value from a snapshot to the projects array
             });
-            setProjects({ projects })
+            setProjects({ projects }) //sets the projects state to be equal to the projects array
         })
     });
 
