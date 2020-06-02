@@ -55,7 +55,7 @@ function Folio(){
             });
             setProjects({ projects }) //sets the projects state to be equal to the projects array
         })
-    });
+    }, []); //dep is an empty array so this effect will be called only once
 
     console.log(projects, "array")
     return(
