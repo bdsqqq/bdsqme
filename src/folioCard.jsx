@@ -84,7 +84,7 @@ function Card(props){
         display: block;
     `
     const MetaRole = styled.div`
-        width: 50%
+        width: 50%;
     `
     const MetaToolsWrapper = styled.div`
         padding: 10px 0;
@@ -148,7 +148,7 @@ function Card(props){
                     </MetaHeader>
                     <MetaRole>{props.role}</MetaRole>
                     <MetaToolsWrapper>
-                        {Tools.map((tool)=><Tool key={tool.id}>{tool.name}</Tool>)}
+                        {Tools.map((tool)=><Tool key={tool}>{tool}</Tool>)}
                     </MetaToolsWrapper>
                     <MetaButtonsWrapper>
                         <Button target="_blank" href={props.demo}><FontAwesomeIcon icon={faEye}/> Demo</Button>
