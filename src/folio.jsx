@@ -51,13 +51,14 @@ function Folio(){
         db.ref('/projects').on('value', (snapshot) => { //creates a reference to /projects on the firebase db and creates a snapshot on each value change
             let projects = []; // creates an empty array called projects to store the data from snapshots
             snapshot.forEach(childSnapshot => {
-                projects.push({ ...childSnapshot.val(), key: childSnapshot.key}) //adds each value from a snapshot to the projects array
+                projects.push({ ...childSnapshot.val(), key:childSnapshot.key}) //adds each value from a snapshot to the projects array
             });
-            setProjects({ projects }) //sets the projects state to be equal to the projects array
+            setProjects(projects) //sets the projects state to be equal to the projects array
         })
     }, []); //dep is an empty array so this effect will be called only once
 
-    console.log(projects, "array")
+    console.log(projects, "array");
+    
     return(
         <>
         <Wrapper>
@@ -65,7 +66,7 @@ function Folio(){
                 Folio
             </Title>
         </Wrapper>
-        <CardContainer>
+        {/* <CardContainer>
             <Card 
                 projeto={"Covid-19 Tracker"} 
                 ano={"2020"} 
@@ -169,6 +170,19 @@ function Folio(){
                 source={""}
                 img={"https://i.postimg.cc/B6GxcjGK/Odara.jpg"}
             />
+        </CardContainer> */}
+        <CardContainer>
+            {projects.map(project => (
+                <Card
+                projeto={project.projeto} 
+                ano={project.ano} 
+                role={project.role} 
+                tools={project.tools}
+                demo={project.demo}
+                source={project.source}
+                img={project.img}
+                key={project.key}/>
+            ))}
         </CardContainer>
         </>
     );
