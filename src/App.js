@@ -1,18 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import Home from './Components/Home'
+import { AuthProvider } from './Auth'
+import Routes from './routes'
 
-function App() {
-    return (
-      <>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
-      </Router>
-      </>
-    );
-}
+const App = () => <AuthProvider><Routes /></AuthProvider>;
 
 export default App;
