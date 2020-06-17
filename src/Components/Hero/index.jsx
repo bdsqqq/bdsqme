@@ -113,10 +113,8 @@ function Hero(){
         }
 
         &:active {
-        transition: 0.2s all;
-        transform: translateY(3px);
-        border: 1px solid transparent;
-        opacity: 0.8;
+        transition: 0.5s all;
+        opacity: 0.7;
         }
 
         ${mq[0]}{
