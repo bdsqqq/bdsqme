@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { faLinkedinIn, faGithub  } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import LogoIcon from '../../assets/logo.svg'
+
 function Header() {
 
     const breakpoints = [48, 64]
@@ -27,8 +29,14 @@ function Header() {
     const Logo = styled.li`
         display: inline;
     `
+    const LogoImg = styled.img`
+        height: 2em;
+    `
+
     const NavItem = styled.li`
         display: inline;
+        float: right;
+
         padding: 0 .3em;
 
         transition-delay: 0s;
@@ -43,7 +51,7 @@ function Header() {
 
   return (
     <Wrapper>
-        <Logo>Igor Bedesqui</Logo>
+        <Logo><LogoImg src={LogoIcon} alt="Logotipo"/></Logo>
         <NavItem><a target="blank" style={{ textDecoration: 'none', color: '#f3f3f3' }} href="https://github.com/bdsqqq"><FontAwesomeIcon icon={faGithub} /></a></NavItem>
         <NavItem><a target="blank" style={{ textDecoration: 'none', color: '#f3f3f3' }} href="https://www.linkedin.com/in/igor-bedesqui-88a38a152/"><FontAwesomeIcon icon={faLinkedinIn} /></a></NavItem>
     </Wrapper>
