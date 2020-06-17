@@ -26,11 +26,9 @@ function Header() {
     `
     const Logo = styled.li`
         display: inline;
-        float: left;
     `
     const NavItem = styled.li`
         display: inline;
-        float: right;
         padding: 0 .3em;
 
         transition-delay: 0s;
