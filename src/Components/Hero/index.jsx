@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { GrMail } from "react-icons/gr";
 
 import useModal from '../../Hooks/useModal'
 import useInterval from '../../Hooks/useInterval'
@@ -21,9 +22,9 @@ function Hero(){
 
     const change = () => setI(zeroTo(i, adjList.length-1));
 
-    useInterval(() => {
+    /*useInterval(() => {
         change();
-    }, delay);
+    }, delay);*/
 
     const {isShowing, toggle} = useModal();
 
@@ -83,15 +84,18 @@ function Hero(){
         font-weight: 400;
         color: #fff;
     `
-    const Button = styled.a`
+    const Button = styled.span`
         cursor: pointer;
 
         background: #feb062;
         width: 100%;
-        display: inline-block;
-        text-align: center;
-        padding: 15px 25px 14px;
-        border: solid 1px #feb062;
+        max-width: 360px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 2px;
+    
+        margin-top: 40px;
 
         color: #3f3b3b;
         font-size: 1.2em;
@@ -103,7 +107,7 @@ function Hero(){
         transition-timing-function: ease-in-out;
 
         -webkit-appearance: none;
-        
+
         &:hover {
             opacity: 0.9;
         }
@@ -119,12 +123,32 @@ function Hero(){
             width: 60%;
         }
     `
+    const IconSpan = styled.span`
+        display: block;
+        background: rgba(0, 0, 0, 0.08);
+        width: 72px;
+        height: 72px;
+
+        font-size: 2em;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s;
+    `
+
+
     return(
         <>
             <Wrapper>
                 <Title>Desenvolvedor Web Fullstack pronto para criar algo <Highlight>{adjList[i]}</Highlight></Title>
                 <Text>Criação de Sites e Serviços com foco na <TextHighlight>qualidade</TextHighlight>, diferenciando-o dos concorrentes, trazendo mais credibilidade para sua marca e gerando resultados para seu projeto. <TextHighlight>Você está preparado para isso?</TextHighlight></Text>
-                <Button onClick={toggle}>Sim, Estou preparado</Button>
+                <Button onClick={toggle}>
+                    <IconSpan>
+                        <GrMail />
+                    </IconSpan>
+                    <strong style={{ margin: "1em"}} > Me fala sobre sua ideia! </strong>
+                </Button>
             </Wrapper>
 
             <Modal

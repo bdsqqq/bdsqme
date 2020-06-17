@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { GoHeart } from "react-icons/go";
 
 function Footer(){
 
@@ -16,7 +15,7 @@ function Footer(){
 
     return(
         <FooterWrapper>
-                <span>Feito com <FontAwesomeIcon icon={faHeart}/> por <a target="blank" style={{ textDecoration: 'none', color: '#f3f3f3' }} href="https://github.com/bdsqqq">@IgorBedesqui</a>  | igorbedesqui@gmail.com | 11 96132-1158</span>
+                <span>Feito com <GoHeart /> por <a target="blank" style={{ textDecoration: 'none', color: '#f3f3f3' }} href="https://github.com/bdsqqq">@IgorBedesqui</a>  | igorbedesqui@gmail.com | 11 96132-1158</span>
         </FooterWrapper>
     );
 }
