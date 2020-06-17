@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import db from './firebase';
 
-import Card from './folioCard';
+import db from '../../firebase';
+
+import Card from '../FolioCard';
 
 function Folio(){
     const breakpoints = [48, 64]

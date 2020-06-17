@@ -1,11 +1,12 @@
 import React from 'react'
-import Header from './header'
-import Hero from './hero'
-import HeroImage from './heroimage'
-import Footer from './footer'
-import Folio from './folio'
 
-import './App.css';
+import '../../App.css';
+
+import Header from '../Header'
+import Hero from '../Hero'
+import HeroImage from '../Heroimage'
+import Footer from '../Footer'
+import Folio from '../Folio'
 
 function Home(){
     

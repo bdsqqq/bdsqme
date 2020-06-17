@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import Contact from './contactTest'
+
+import Contact from '../Contact'
 
 const ModalOverlay = styled.div`
     position: fixed;

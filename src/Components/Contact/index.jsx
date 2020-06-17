@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
-import "./styles.css";
-import useInterval from './useInterval'
+
+import "../../styles.css";
+import useInterval from '../../Hooks/useInterval'
 
 const axios = require('axios');
 

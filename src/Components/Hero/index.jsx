@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Modal from './modal'
-import useModal from './useModal'
-import useInterval from './useInterval'
 
+import useModal from '../../Hooks/useModal'
+import useInterval from '../../Hooks/useInterval'
+
+import Modal from '../Modal'
 
 function Hero(){
     const [i, setI] = useState(0);
