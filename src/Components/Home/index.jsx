@@ -4,7 +4,7 @@ import '../../App.css';
 
 import Header from '../Header'
 import Hero from '../Hero'
-import HeroImage from '../Heroimage'
+import HeroImage from '../HeroImage'
 import Footer from '../Footer'
 import Folio from '../Folio'
 
