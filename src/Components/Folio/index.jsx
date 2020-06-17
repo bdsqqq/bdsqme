@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import db from '../../firebase';
 
 import Card from '../FolioCard';
+import Loader from '../LoaderFolioCard'
 
 function Folio(){
     const breakpoints = [48, 64]
@@ -25,6 +26,7 @@ function Folio(){
     `
     const CardContainer = styled.div`
         width: 100%;
+        min-height: 24rem;
         height: auto;
         background: #575151;
         border-radius: 10px 10px 0 0;
@@ -46,7 +48,8 @@ function Folio(){
         }
     `
 
-    const[projects, setProjects] = useState([]) //creates a state variable called projects and a method to update it
+    const [isLoaded, setIsloaded] = useState(false);
+    const [projects, setProjects] = useState([]) //creates a state variable called projects and a method to update it
 
     useEffect(() => {
         db.ref('/projects').on('value', (snapshot) => { //creates a reference to /projects on the firebase db and creates a snapshot on each value change
@@ -55,6 +58,7 @@ function Folio(){
                 projects.push({ ...childSnapshot.val(), key:childSnapshot.key}) //adds each value from a snapshot to the projects array
             });
             setProjects(projects) //sets the projects state to be equal to the projects array
+            setIsloaded(true);
         })
     }, []); //dep is an empty array so this effect will be called only once
 
@@ -172,8 +176,10 @@ function Folio(){
                 img={"https://i.postimg.cc/B6GxcjGK/Odara.jpg"}
             />
         </CardContainer> */}
+    
         <CardContainer>
-            {projects.map(project => (
+        { isLoaded === false ? <> <Loader />  <Loader />  <Loader /></> :
+            projects.map(project => (
                 <Card
                 projeto={project.projeto} 
                 ano={project.ano} 
@@ -183,7 +189,8 @@ function Folio(){
                 source={project.source}
                 img={project.img}
                 key={project.key}/>
-            ))}
+            ))
+        }
         </CardContainer>
         </>
     );
