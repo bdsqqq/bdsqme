@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import { GoHeart } from "react-icons/go";
 
-function Footer(){
-
-    const FooterWrapper = styled.div`
+const FooterWrapper = styled.div`
         margin: 10vh auto 15px;
         position: relative;
         width: 90%;
@@ -12,6 +10,8 @@ function Footer(){
         font-size: 13px;
         text-align: center;
     `
+
+function Footer(){
 
     return(
         <FooterWrapper>
